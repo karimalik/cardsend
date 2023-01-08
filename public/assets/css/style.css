@@ -305,6 +305,9 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2; }
+.typingText {
+    animation: blink .6s step-end infinite alternate;
+}
 
 h1, .h1 {
   font-size: 2.5rem; }
@@ -9919,6 +9922,10 @@ textarea.form-control {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
 
 @keyframes loader-rotate {
   100% {
