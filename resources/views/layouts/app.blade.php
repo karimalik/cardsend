@@ -63,8 +63,8 @@
                         <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
                             <a href="{{ url('booking') }}" class="nav-link">Booking</a>
                         </li>
-                        <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
-                            <a href="#" class="nav-link">Blog</a>
+                        <li class="nav-item {{ Request::path() == 'blog' ? 'active' : ''}}">
+                            <a href="{{ url('blog') }}" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
                             <a href="{{ url('contact') }}" class="nav-link">Contact</a>
@@ -82,8 +82,8 @@
                         <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
                             <a href="{{ url('booking')  }}" class="nav-link">Booking</a>
                         </li>
-                        <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
-                            <a href="#" class="nav-link">Blog</a>
+                        <li class="nav-item {{ Request::path() == 'blog' ? 'active' : ''}}">
+                            <a href="{{ url('blog') }}" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
                             <a href="{{ url('contact')  }}" class="nav-link">Contact</a>
@@ -129,10 +129,10 @@
                     <div class="ftco-footer-widget mb-4 ml-md-5">
                         <h2 class="ftco-heading-2">Liens Rapide</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">Accueil</a></li>
-                            <li><a href="#" class="py-2 d-block">A Propos</a></li>
-                            <li><a href="#" class="py-2 d-block">Booking</a></li>
-                            <li><a href="#" class="py-2 d-block">Blog</a></li>
+                            <li><a href="{{ url('/') }}" class="py-2 d-block">Accueil</a></li>
+                            <li><a href="{{ url('about-us') }}" class="py-2 d-block">A Propos</a></li>
+                            <li><a href="{{ url('booking') }}" class="py-2 d-block">Booking</a></li>
+                            <li><a href="{{ url('blog') }}" class="py-2 d-block">Blog</a></li>
                         </ul>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
                         <h2 class="ftco-heading-2">Customer Support</h2>
                         <ul class="list-unstyled">
                             <li><a href="#" class="py-2 d-block">FAQ</a></li>
-                            <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+                            <li><a href="{{ url('contact') }}" class="py-2 d-block">Contact Us</a></li>
                             <li><a href="#" class="py-2 d-block">Condition d'utilisation</a></li>
                         </ul>
                     </div>
@@ -153,10 +153,10 @@
                             <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">Bonamoussadi
                                         Douala, Cameroun.</span></li>
-                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">
-                                    (237) 655 299 168
+                                <li><a href="tel://+237690138873"><span class="icon icon-phone"></span><span class="text">
+                                    (237) 690 138 873
                                     </span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span
+                                <li><a href="mailto:info@carsend.com"><span class="icon icon-envelope"></span><span
                                             class="text">info@carsend.com</span></a></li>
                             </ul>
                         </div>
@@ -190,6 +190,7 @@
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery-migrate-3.0.1.min.js')}}"></script>
     <script src="{{asset('assets/js/popper.min.js')}}"></script>
+    <script src="{{asset('assets/js/sweetalert.min.js')}}"></script>
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.easing.1.3.js')}}"></script>
     <script src="{{asset('assets/js/jquery.waypoints.min.js')}}"></script>

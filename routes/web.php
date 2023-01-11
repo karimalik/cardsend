@@ -30,6 +30,10 @@ Route::get('contact', function(){
     return view('pages.contact');
 });
 
+Route::get('blog', function(){
+    return view('pages.blog');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
