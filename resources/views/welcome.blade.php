@@ -181,7 +181,7 @@ Accueil : CarSend : Vente et achats de vehicule
     <div class="container">
         <div class="row no-gutters">
             <div class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
-                style="background-image: url('assets/images/about.jpg');">
+                style="background-image: url('assets/images/fun.jpg');">
             </div>
             <div class="col-md-6 wrap-about ftco-animate">
                 <div class="heading-section heading-section-white pl-md-5">
@@ -199,7 +199,7 @@ Accueil : CarSend : Vente et achats de vehicule
                         Il vous suffit juste de créer votre compte c'est totalement gartuit et de poster votre vehicule pour sa mise en vente.
                     </p>
 
-                    <p><a href="#" class="btn btn-primary py-3 px-4">Rechercher Un Véhicule</a></p>
+                    <p><a href="#" class="btn btn-primary py-3 px-4">Vendre Ma Voiture</a></p>
                 </div>
             </div>
         </div>

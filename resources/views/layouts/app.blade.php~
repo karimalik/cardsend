@@ -58,16 +58,15 @@
                             <a href={{ url('/') }}" class="nav-link">Accueil</a>
                         </li>
                         <li class="nav-item {{ Request::path() == 'about-us' ? 'active' : ''}}">
-                            <a href="{{ url('about-us') }}" class="nav-link">A Propos</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
-                            <a href="{{ url('booking') }}" class="nav-link">Booking</a>
+                            <a href="#" class="nav-link">A Propos</a>
                         </li>
                         <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
-                            <a href="#" class="nav-link">Blog</a>
+                            <a href="#" class="nav-link">Booking</a>
                         </li>
-                        <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
-                            <a href="{{ url('contact') }}" class="nav-link">Contact</a>
+                        <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
+                            <a href="#" class="nav-link">Blog</a></li>
+                        <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
+                            <a href="#" class="nav-link">Contact</a>
                         </li>
                         <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
                             <a href="#" class="nav-link">Dashoard</a>
@@ -76,23 +75,23 @@
                         <li class="nav-item {{ Request::path() == '/' ? 'active' : ''}}">
                             <a href="{{ url('/') }}" class="nav-link">Accueil</a>
                         </li>
-                        <li class="nav-item {{ Request::path() == 'about-us' ? 'active' : ''}}">
-                            <a href="{{ url('about-us')  }}" class="nav-link">A Propos</a>
+                        <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
+                            <a href="#" class="nav-link">A Propos</a>
                         </li>
-                        <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
-                            <a href="{{ url('booking')  }}" class="nav-link">Booking</a>
+                        <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
+                            <a href="#" class="nav-link">Booking</a>
                         </li>
                         <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
                             <a href="#" class="nav-link">Blog</a>
                         </li>
-                        <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
-                            <a href="{{ url('contact')  }}" class="nav-link">Contact</a>
+                        <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
+                            <a href="#" class="nav-link">Contact</a>
                         </li>
-                        <li class="nav-item {{ Request::path() == 'login' ? 'active' : ''}}">
+                        <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
                             <a href="{{ route('login') }}" class="nav-link">Connexion</a>
                         </li>
                         @if (Route::has('register'))
-                            <li class="nav-item {{ Request::path() == 'register' ? 'active' : ''}}">
+                            <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
                                 <a href="{{ route('register') }}" class="nav-link">Inscription</a>
                             </li>
                         @endif
