@@ -12,6 +12,7 @@
     <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta author="karim kompissi">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
         rel="stylesheet">
@@ -54,48 +55,56 @@
                 <ul class="navbar-nav ml-auto">
 
                     @auth
-                        <li class="nav-item {{ Request::path() == '/' ? 'active' : ''}}">
-                            <a href={{ url('/') }}" class="nav-link">Accueil</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'about-us' ? 'active' : ''}}">
-                            <a href="{{ url('about-us') }}" class="nav-link">A Propos</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
-                            <a href="{{ url('booking') }}" class="nav-link">Booking</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'blog' ? 'active' : ''}}">
-                            <a href="{{ url('blog') }}" class="nav-link">Blog</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
-                            <a href="{{ url('contact') }}" class="nav-link">Contact</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
-                            <a href="#" class="nav-link">Dashoard</a>
-                        </li>
+                    <li class="nav-item {{ Request::path() == '/' ? 'active' : ''}}">
+                        <a href={{ url('/') }}" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == 'about-us' ? 'active' : ''}}">
+                        <a href="{{ url('about-us') }}" class="nav-link">A Propos</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
+                        <a href="{{ url('booking') }}" class="nav-link">Booking</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == 'blog' ? 'active' : ''}}">
+                        <a href="{{ url('blog') }}" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
+                        <a href="{{ url('contact') }}" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
+                        <a href="#" class="nav-link">Dashoard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">Déconnexion</a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
                     @else
-                        <li class="nav-item {{ Request::path() == '/' ? 'active' : ''}}">
-                            <a href="{{ url('/') }}" class="nav-link">Accueil</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'about-us' ? 'active' : ''}}">
-                            <a href="{{ url('about-us')  }}" class="nav-link">A Propos</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
-                            <a href="{{ url('booking')  }}" class="nav-link">Booking</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'blog' ? 'active' : ''}}">
-                            <a href="{{ url('blog') }}" class="nav-link">Blog</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
-                            <a href="{{ url('contact')  }}" class="nav-link">Contact</a>
-                        </li>
-                        <li class="nav-item {{ Request::path() == 'login' ? 'active' : ''}}">
-                            <a href="{{ route('login') }}" class="nav-link">Connexion</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item {{ Request::path() == 'register' ? 'active' : ''}}">
-                                <a href="{{ route('register') }}" class="nav-link">Inscription</a>
-                            </li>
-                        @endif
+                    <li class=" nav-item {{ Request::path()=='/' ? 'active' : '' }}">
+                        <a href="{{ url('/') }}" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == 'about-us' ? 'active' : ''}}">
+                        <a href="{{ url('about-us')  }}" class="nav-link">A Propos</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
+                        <a href="{{ url('booking')  }}" class="nav-link">Booking</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == 'blog' ? 'active' : ''}}">
+                        <a href="{{ url('blog') }}" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
+                        <a href="{{ url('contact')  }}" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item {{ Request::path() == 'login' ? 'active' : ''}}">
+                        <a href="{{ route('login') }}" class="nav-link">Connexion</a>
+                    </li>
+                    @if (Route::has('register'))
+                    <li class="nav-item {{ Request::path() == 'register' ? 'active' : ''}}">
+                        <a href="{{ route('register') }}" class="nav-link">Inscription</a>
+                    </li>
+                    @endif
                     @endauth
 
                 </ul>
@@ -153,9 +162,10 @@
                             <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">Bonamoussadi
                                         Douala, Cameroun.</span></li>
-                                <li><a href="tel://+237690138873"><span class="icon icon-phone"></span><span class="text">
-                                    (237) 690 138 873
-                                    </span></a></li>
+                                <li><a href="tel://+237690138873"><span class="icon icon-phone"></span><span
+                                            class="text">
+                                            (237) 690 138 873
+                                        </span></a></li>
                                 <li><a href="mailto:info@carsend.com"><span class="icon icon-envelope"></span><span
                                             class="text">info@carsend.com</span></a></li>
                             </ul>

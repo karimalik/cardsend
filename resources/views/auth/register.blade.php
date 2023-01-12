@@ -1,124 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
+@section('tite1')
+Inscription : CarSend
+@endsection
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Register : CarSend</title>
-
-    <!-- Custom fonts for this template-->
-    <link href="{{ asset('utils/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="{{ asset('utils/css/sb-admin-2.min.css') }}" rel="stylesheet">
-
-</head>
-
-<body class="bg-gradient-white">
-
-    <div class="container">
-
-        <div class="card o-hidden border-0 shadow-lg my-5 ">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Créez un compte !</h1>
-                            </div>
-                            <form class="user" method="POST" action="{{ route('register') }}">
-                                @csrf
-                                <div class="form-group">
-                                    <input type="text"
-                                        class="form-control form-control-user @error('name') is-invalid @enderror"
-                                        id="exampleInputEmail" placeholder="Nom" name="name" value="{{ old('name') }}"
-                                        required autocomplete="name" autofocus>
-                                    @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <input type="email"
-                                        class="form-control form-control-user @error('email') is-invalid @enderror"
-                                        id="exampleInputEmail" placeholder="Adresse Email" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email">
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password"
-                                            class="form-control form-control-user @error('password') is-invalid @enderror"
-                                            id="exampleInputPassword" placeholder="Mot de passe" name="password"
-                                            required autocomplete="new-password">
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Confimer le mot de passe"
-                                            name="password_confirmation" required autocomplete="new-password">
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block">Inscription</button>
-                                <a href="{{ url('/') }}" class="btn btn-secondary btn-user btn-block">Retour</a>
-                                <hr>
-                                <a href="#" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="#" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                @if (Route::has('password.request'))
-                                <a class="small" href="{{ route('password.request')}}">Mot de passe
-                                    oublié?</a>
-                                @endif
-                            </div>
-                            <div class="text-center">
-                                @if (Route::has('login'))
-                                <a class="small" href="{{ route('login') }}">Vous avez déjà un compte? Connexion </a>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+@section('extra-content')
+<div class="row">
+    <div class="col-md-6 order-md-2">
+        <a href="{{ url('/') }}"><img src="{{ asset('utils/images/register.jpg') }}" alt="Image" class="img-fluid"></a>
+    </div>
+    <div class="col-md-6 contents">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="mb-4">
+                    <h3>Inscription</h3>
+                    <p class="mb-4">
+                        Vous avez déjà un compte? cliquez
+                        <a href="{{ route('login') }}" class="text-primary">Ici</a> pour vous connectez.
+                    </p>
                 </div>
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div class="form-group first">
+                        <label for="name">Nom</label>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                            name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+
+                    </div>
+                    <div class="form-group first">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control  @error('email') is-invalid @enderror" id="email"
+                            name="email" value="{{ old('email') }}" required autocomplete="email">
+                            
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+
+                    </div>
+                    <div class="form-group last mb-4">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control @error('password') is-invalid @enderror"
+                            id="password" name="password" required autocomplete="new-password">
+
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+
+                    </div>
+                    <div class="form-group last mb-4">
+                        <label for="password-confirm">Confirmer le mot de passe</label>
+                        <input type="password" class="form-control" id="password-confirm" name="password_confirmation"
+                            required autocomplete="new-password">
+                    </div>
+
+                    <button type="submit" class="btn text-white btn-block btn-primary">Inscription</button>
+
+                    <span class="d-block text-left my-4 text-muted">Connectez vous avez</span>
+
+                    <div class="social-login">
+                        <a href="#" class="facebook">
+                            <span class="icon-facebook mr-3"></span>
+                        </a>
+                        <a href="#" class="twitter">
+                            <span class="icon-twitter mr-3"></span>
+                        </a>
+                        <a href="#" class="google">
+                            <span class="icon-google mr-3"></span>
+                        </a>
+                    </div>
+                </form>
             </div>
         </div>
 
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('utils/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('utils/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{asset('assets/js/sweetalert.min.js')}}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{{ asset('utils/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{ asset('utils/js/sb-admin-2.min.js') }}"></script>
-
-</body>
-
-</html>
+</div>
+@endsection

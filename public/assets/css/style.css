@@ -11,7 +11,7 @@
   --pink: #e83e8c;
   --red: #dc3545;
   --orange: #fd7e14;
-  --yellow: #ffc107;
+  --yellow: #2c2a24;
   --green: #28a745;
   --teal: #20c997;
   --cyan: #17a2b8;
@@ -1418,13 +1418,13 @@ pre {
 .table-success td,
 .table-success thead th,
 .table-success tbody + tbody {
-  border-color: #8fd19e; }
+  border-color: #d18f9d; }
 
 .table-hover .table-success:hover {
-  background-color: #b1dfbb; }
+  background-color: #dfb1b9; }
   .table-hover .table-success:hover > td,
   .table-hover .table-success:hover > th {
-    background-color: #b1dfbb; }
+    background-color: #dfb1bd; }
 
 .table-info,
 .table-info > th,
@@ -1758,7 +1758,7 @@ textarea.form-control {
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
-  color: #28a745; }
+  color: #dc3545; }
 
 .valid-tooltip {
   position: absolute;
