@@ -37,7 +37,7 @@ Inscription : CarSend
                         <label for="email">Email</label>
                         <input type="email" class="form-control  @error('email') is-invalid @enderror" id="email"
                             name="email" value="{{ old('email') }}" required autocomplete="email">
-                            
+
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -68,10 +68,10 @@ Inscription : CarSend
                     <span class="d-block text-left my-4 text-muted">Connectez vous avez</span>
 
                     <div class="social-login">
-                        <a href="#" class="facebook">
+                        <a href="{{ route('fauth.redirect') }}" class="facebook">
                             <span class="icon-facebook mr-3"></span>
                         </a>
-                        <a href="#" class="twitter">
+                        <a href="{{ route('oauth.redirect') }}" class="twitter">
                             <span class="icon-twitter mr-3"></span>
                         </a>
                         <a href="#" class="google">
