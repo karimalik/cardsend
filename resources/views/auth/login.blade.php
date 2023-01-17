@@ -67,7 +67,7 @@ Connexion : CarSend
                         <a href="#" class="facebook">
                             <span class="icon-facebook mr-3"></span>
                         </a>
-                        <a href="#" class="google">
+                        <a href="{{ route('oauth.redirect') }}" class="google">
                             <span class="icon-google mr-3"></span>
                         </a>
                         {{-- <a href="#" class="twitter">

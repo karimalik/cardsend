@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,11 @@ Route::get('contact', function(){
 
 Route::get('blog', function(){
     return view('pages.blog');
+});
+
+Route::controller(OAuthController::class)->group(function() {
+    Route::get('auth/redirect/google', 'redirect')->name('oauth.redirect');
+    Route::get('auth/callback/google', 'callback')->name('oauth.callback');
 });
 
 Auth::routes(['verify' => true]);
