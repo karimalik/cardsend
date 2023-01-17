@@ -70,6 +70,9 @@ Connexion : CarSend
                         <a href="#" class="google">
                             <span class="icon-google mr-3"></span>
                         </a>
+                        {{-- <a href="#" class="twitter">
+                            <span class="icon-twitter mr-3"></span>
+                        </a> --}}
                     </div>
                 </form>
             </div>
