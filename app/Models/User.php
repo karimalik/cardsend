@@ -24,6 +24,9 @@ class User extends Authenticatable
         'google_id',
         'google_token',
         'google_refresh_token',
+        'facebook_id',
+        'facebook_token',
+        'facebook_refresh_token',
     ];
 
     /**
@@ -36,6 +39,8 @@ class User extends Authenticatable
         'remember_token',
         'google_token',
         'google_refresh_token',
+        'facebook_token',
+        'facebook_refresh_token',
     ];
 
     /**
@@ -47,5 +52,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'google_token' => 'encrypted',
         'google_refresh_token' => 'encrypted',
+        'facebook_token' => 'encrypted',
+        'facebook_refresh_token' => 'encrypted',
     ];
 }

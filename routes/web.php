@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OAuthController;
+use App\Http\Controllers\FacebookAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,10 +36,18 @@ Route::get('blog', function(){
     return view('pages.blog');
 });
 
+//start sociale connect
 Route::controller(OAuthController::class)->group(function() {
     Route::get('auth/redirect/google', 'redirect')->name('oauth.redirect');
     Route::get('auth/callback/google', 'callback')->name('oauth.callback');
 });
+
+Route::controller(FacebookAuthController::class)->group(function() {
+    Route::get('auth/redirect/facebook', 'redirect')->name('fauth.redirect');
+    Route::get('auth/callback/facebook', 'callback')->name('fauth.callback');
+});
+
+//end sociale connect
 
 Auth::routes(['verify' => true]);
 

@@ -64,7 +64,7 @@ Connexion : CarSend
                     <span class="d-block text-left my-4 text-muted">Connectez vous avez</span>
 
                     <div class="social-login">
-                        <a href="#" class="facebook">
+                        <a href="{{ route('fauth.redirect') }}" class="facebook">
                             <span class="icon-facebook mr-3"></span>
                         </a>
                         <a href="{{ route('oauth.redirect') }}" class="google">
