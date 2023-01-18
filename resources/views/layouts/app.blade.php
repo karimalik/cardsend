@@ -70,8 +70,8 @@
                     <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
                         <a href="{{ url('contact') }}" class="nav-link">Contact</a>
                     </li>
-                    <li class="nav-item {{ Request::path() == '' ? 'active' : ''}}">
-                        <a href="#" class="nav-link">Dashoard</a>
+                    <li class="nav-item {{ Request::path() == 'home' ? 'active' : ''}}">
+                        <a href="{{ route('home') }}" class="nav-link">Dashoard</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
