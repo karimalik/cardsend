@@ -52,7 +52,7 @@
                         <!--//col-->
                         <div class="app-search-box col">
                             <form class="app-search-form">
-                                <input type="text" placeholder="Search..." name="search"
+                                <input type="text" placeholder="Rechercher..." name="search"
                                     class="form-control search-input">
                                 <button type="submit" class="btn search-btn btn-primary" value="Search"><i
                                         class="fas fa-search"></i></button>
@@ -106,7 +106,8 @@
                     <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link {{ Request::path()=='home' ? 'active' : ''}} " href="{{ route('home') }}">
+                            <a class="nav-link {{ Request::path()=='home' ? 'active' : ''}} "
+                                href="{{ route('home') }}">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +124,8 @@
                         <!--//nav-item-->
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link {{ Request::path()=='cars' ? 'active' : '' }} " href="{{ route('cars.index') }}">
+                            <a class="nav-link {{ Request::path()=='cars' ? 'active' : '' }} "
+                                href="{{ route('cars.index') }}">
                                 <span class="nav-icon">
                                     <i class="fas fa-car"></i>
                                 </span>
@@ -224,15 +226,7 @@
 
         @yield('content-main')
 
-        <footer class="app-footer">
-            <div class="container text-center py-3">
-                <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-                <small class="copyright">Designed by <a class="app-link" href="http://www.webixcm.com"
-                        target="_blank">Webix</a></small>
-
-            </div>
-        </footer>
-        <!--//app-footer-->
+        
 
     </div>
     <!--//app-wrapper-->

@@ -48,8 +48,13 @@ Route::controller(FacebookAuthController::class)->group(function() {
     Route::get('auth/callback/facebook', 'callback')->name('fauth.callback');
 });
 
-Route::resource('cars', CarController::class);
+Route::group(['middleware' => 'auth' ,'prefix' => 'cpanel'], function() {
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('cars', CarController::class);
+});
+
+
 
 Auth::routes(['verify' => true]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

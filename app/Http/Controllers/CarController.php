@@ -9,6 +9,17 @@ use Illuminate\Support\Facades\DB;
 
 class CarController extends Controller
 {
+
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,9 +32,9 @@ class CarController extends Controller
         SEOTools::setDescription('Vente de voiture en ligne au cameroun');
         SEOTools::opengraph()->setUrl('http://127.0.0.1:8000/');
 
-        $allCar = DB::table('cars')->select('*')->paginate(10);
+        $cars = Car::latest()->paginate(10);
 
-        return view('dashbord.auto', compact('allCar'));
+        return view('dashbord.auto', compact('cars'))->with(request()->input('page'));
     }
 
     /**
