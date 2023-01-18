@@ -12,7 +12,7 @@ Accueil : CarSend : Vente et achats de vehicule
         <div class="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
             <div class="col-lg-8 ftco-animate">
                 <div class="text w-100 text-center mb-md-5 pb-md-5">
-                    <h1 class="mb-4 typingText" id="textAnimate">Bienvenu Chez CarSend</h1>
+                    <h1 class="mb-4 typingText" id="textAnimate">Bienvenue Chez CarSend</h1>
                     <p style="font-size: 18px;">
                         Votre plateforme web de vente &amp; achat de véhicule. vendez & achetez facilement votre
                         véhicule en ligne.
@@ -88,6 +88,7 @@ Accueil : CarSend : Vente et achats de vehicule
                                     </div>
                                 </div>
                             </div>
+                            <p><a href="#" class="btn btn-primary py-3 px-4">Vendre Ma Voiture</a></p>
                         </div>
                     </div>
                 </div>

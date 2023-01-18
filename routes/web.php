@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OAuthController;
@@ -36,7 +37,7 @@ Route::get('blog', function(){
     return view('pages.blog');
 });
 
-//start sociale connect
+//sociale connexion
 Route::controller(OAuthController::class)->group(function() {
     Route::get('auth/redirect/google', 'redirect')->name('oauth.redirect');
     Route::get('auth/callback/google', 'callback')->name('oauth.callback');
@@ -47,7 +48,7 @@ Route::controller(FacebookAuthController::class)->group(function() {
     Route::get('auth/callback/facebook', 'callback')->name('fauth.callback');
 });
 
-//end sociale connect
+Route::resource('cars', CarController::class);
 
 Auth::routes(['verify' => true]);
 

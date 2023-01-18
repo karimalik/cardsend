@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use Artesaos\SEOTools\Facades\SEOTools;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CarController extends Controller
 {
@@ -15,6 +17,13 @@ class CarController extends Controller
     public function index()
     {
         //
+        SEOTools::setTitle('Dashbord | Car');
+        SEOTools::setDescription('Vente de voiture en ligne au cameroun');
+        SEOTools::opengraph()->setUrl('http://127.0.0.1:8000/');
+
+        $allCar = DB::table('cars')->select('*')->paginate(10);
+
+        return view('dashbord.auto', compact('allCar'));
     }
 
     /**
