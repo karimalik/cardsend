@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->string('prix')->nullable();
+            $table->string('slug')->nullable();
             $table->string('negociable')->nullable();
             $table->string('type')->nullable();
             $table->string('etat')->nullable();
@@ -32,6 +33,7 @@ return new class extends Migration
             $table->string('climatisation')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
+            $table->string('status')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

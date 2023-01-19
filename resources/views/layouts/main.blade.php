@@ -23,8 +23,11 @@
     <!-- FontAwesome JS-->
     <script defer src="{{ asset('dash/assets/plugins/fontawesome/js/all.min.js') }}"></script>
 
-    <!-- App CSS -->
+    <!-- Bootstrap CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ asset('dash/assets/css/portal.css') }}">
+
+    <!-- App CSS -->
+    <link id="theme-style" rel="stylesheet" href="{{ asset('dash/assets/bootstrap/css/bootstrap.min.css') }}">
 
 </head>
 
@@ -106,7 +109,7 @@
                     <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link {{ Request::path()=='home' ? 'active' : ''}} "
+                            <a class="nav-link {{ Request::path()=='cpanel/home' ? 'active' : ''}} "
                                 href="{{ route('home') }}">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door"
@@ -124,7 +127,7 @@
                         <!--//nav-item-->
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link {{ Request::path()=='cars' ? 'active' : '' }} "
+                            <a class="nav-link {{ Request::path()=='cpanel/cars' ? 'active' : '' }} "
                                 href="{{ route('cars.index') }}">
                                 <span class="nav-icon">
                                     <i class="fas fa-car"></i>
@@ -226,7 +229,7 @@
 
         @yield('content-main')
 
-        
+
 
     </div>
     <!--//app-wrapper-->

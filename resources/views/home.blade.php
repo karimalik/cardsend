@@ -25,7 +25,7 @@ Dashbord | CarSend
                         </div>
                         <!--//col-->
                         <div class="col-12 col-lg-3">
-                            <a class="btn app-btn-primary" href="#">Ajouter Un Poste</a>
+                            <a class="btn app-btn-primary" href="{{ route('cars.create') }}">Ajouter Une Voiture</a>
                         </div>
                         <!--//col-->
                     </div>

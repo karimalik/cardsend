@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title2')
-Dashbord | CarSend
+Cpanel | CarSend
 @endsection
 
 @section('content-main')
@@ -28,7 +28,7 @@ Dashbord | CarSend
                         </div>
                         <!--//col-->
                         <div class="col-auto">
-                            <a class="btn app-btn-primary" href="#">Ajouter Une Voiture</a>
+                            <a class="btn app-btn-primary" href="{{ route('cars.create') }}">Ajouter Une Voiture</a>
                         </div>
                         <div class="col-auto">
                             <a class="btn app-btn-secondary" href="#">Booster Vos Postes</a>
