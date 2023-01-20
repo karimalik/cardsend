@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
-use Artesaos\SEOTools\Facades\SEOTools;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Artesaos\SEOTools\Facades\SEOTools;
+use RealRashid\SweetAlert\Facades\Alert;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class CarController extends Controller
 {
@@ -32,7 +36,7 @@ class CarController extends Controller
         SEOTools::setDescription('Vente de voiture en ligne au cameroun');
         SEOTools::opengraph()->setUrl('http://127.0.0.1:8000/');
 
-        $cars = Car::latest()->paginate(10);
+        $cars = Car::latest()->paginate(8);
 
         return view('dashbord.auto', compact('cars'))->with(request()->input('page'));
     }
@@ -56,7 +60,43 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+    //   if ($request->hasfile('image')) {
+    //     # code...
+    //     $file = $request->file('image');
+    //     $extension = $file->getClientOriginalExtension();
+    //     $filename = time(). '.' .$extension;
+    //     $file->move('galerie/cars/', $filename);
+    //   }
+
+      $newImageName = time() . '-' . $request->marque . '.' . $request->image->extension();
+      $request->image->move(public_path('Cars'), $newImageName);
+      $data = [
+        'slug' => Str::slug($request->marque),
+        'marque' => $request->marque,
+        'modele' => $request->modele,
+        'prix' => $request->prix,
+        'negociable' => $request->negociable,
+        // 'type' => $request->type,
+        'etat' => $request->etat,
+        'carrosserie' => $request->carrosserie,
+        'killometrage' => $request->killometrage,
+        'annee' => $request->annee,
+        'moteur' => $request->moteur,
+        'couleur' => $request->couleur,
+        'carburant' => $request->carburant,
+        'transmission' => $request->transmission,
+        'volant' => $request->volant,
+        'climatisation' => $request->climatisation,
+        'description' => $request->description,
+        'image' => $newImageName,
+        'status' => $request->status,
+        'user_id' => Auth::user()->id,
+      ];
+
+      Car::create($data);
+
+      return back()->withSuccess('Your post has been successfully add!');
     }
 
     /**

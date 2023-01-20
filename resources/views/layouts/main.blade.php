@@ -28,7 +28,6 @@
 
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ asset('dash/assets/bootstrap/css/bootstrap.min.css') }}">
-
 </head>
 
 <body class="app">
@@ -245,6 +244,7 @@
 
     <!-- Page Specific JS -->
     <script src="{{ asset('dash/assets/js/app.js') }}"></script>
+    @yield('extra-js')
 
 </body>
 

@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('prix')->nullable();
             $table->string('slug')->nullable();
             $table->string('negociable')->nullable();
-            $table->string('type')->nullable();
+            // $table->string('type')->nullable();
             $table->string('etat')->nullable();
             $table->string('marque')->nullable();
             $table->string('modele')->nullable();
             $table->string('carrosserie')->nullable();
-            $table->string('kilometrage')->nullable();
+            $table->string('killometrage')->nullable();
             $table->string('annee')->nullable();
             $table->string('moteur')->nullable();
             $table->string('couleur')->nullable();

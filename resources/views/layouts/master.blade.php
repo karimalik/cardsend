@@ -25,6 +25,7 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="{{ asset('utils/css/style.css') }}">
+    @include('sweetalert::alert')
 
     <title>@yield('tite1')</title>
 </head>

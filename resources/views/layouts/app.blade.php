@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    @include('sweetalert::alert')
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])

@@ -49,7 +49,7 @@ Cpanel | CarSend
                 <div class="app-card app-card-doc shadow-sm  h-100">
                     <div class="app-card-thumb-holder p-3">
                         <div class="app-card-thumb">
-                            <img class="thumb-image" src="{{ asset('dash/assets/images/doc-thumb-1.jpg') }}" alt="">
+                            <img class="thumb-image" src="{{ asset('Cars/' . $car->image) }}" alt="">
                         </div>
                         <a class="app-card-link-mask" href="#file-link"></a>
                     </div>
@@ -146,13 +146,7 @@ Cpanel | CarSend
             @endforelse
         </div>
         <!--//row-->
-        <nav class="app-pagination mt-5">
-            <ul class="pagination justify-content-center">
-
-                <li class="page-item"><a class="page-link" href="#">{{ $cars->links() }}</a></li>
-
-            </ul>
-        </nav>
+        <p>{{ $cars->links() }}</p>
         <!--//app-pagination-->
     </div>
     <!--//container-fluid-->

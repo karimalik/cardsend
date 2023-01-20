@@ -55,4 +55,14 @@ class User extends Authenticatable
         'facebook_token' => 'encrypted',
         'facebook_refresh_token' => 'encrypted',
     ];
+
+    /**
+     * Get all of the comments for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function cars()
+    {
+        return $this->hasMany(Car::class);
+    }
 }

@@ -18,12 +18,12 @@ class Car extends Model
     protected $fillable = [
         'prix',
         'negociable',
-        'type',
+        // 'type',
         'etat',
         'marque',
         'modele',
         'carrosserie',
-        'kilometrage',
+        'killometrage',
         'annee',
         'moteur',
         'couleur',
@@ -33,5 +33,26 @@ class Car extends Model
         'climatisation',
         'description',
         'image',
+        'status',
+        'slug',
+        'user_id',
     ];
+
+    // public function sluggable(): Array {
+    //     return [
+    //         'slug' => [
+    //             'source' => 'marque',
+    //         ]
+    //     ];
+    // }
+
+  /**
+   * Get the user that owns the Car
+   *
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+   */
+  public function user()
+  {
+      return $this->belongsTo(User::class);
+  }
 }

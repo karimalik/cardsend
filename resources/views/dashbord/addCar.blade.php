@@ -17,7 +17,8 @@ Cpanel | CarSend
             <div class="col-12 col-md-12">
                 <div class="app-card app-card-settings shadow-sm p-4">
                     <div class="app-card-body">
-                        <form class="settings-form" >
+                        <form class="settings-form" method="POST" action="{{ route('cars.store') }}" enctype="multipart/form-data">
+                            @csrf
                             <div class="mb-3">
                                 <label for="marque" class="form-label">Marque*</label>
                                 <input type="text" class="form-control" id="marque" name="marque" value=""
@@ -40,7 +41,7 @@ Cpanel | CarSend
                             </div>
                             <div class="mb-3">
                                 <label for="annee" class="form-label">Annee</label>
-                                <select class="form-select form-control" aria-label="annee" name="anne">
+                                <select class="form-select form-control" aria-label="annee" name="annee">
                                     <option selected>Choix...</option>
                                     <option value="2022">2022</option>
                                     <option value="2022">2021</option>
@@ -158,7 +159,7 @@ Cpanel | CarSend
                             </div>
                             <div class="mb-3">
                                 <label for="image" class="form-label">Image*</label>
-                                <input class="form-control" type="file" id="image" name="image" required>
+                                <input class="form-control" type="file" id="image" name="image" required accept=".jpg, .png, .jpeg, .svg">
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Description</label>
@@ -166,7 +167,7 @@ Cpanel | CarSend
                                     name="description" style="height: 100px"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="status" class="form-label"></label>
+                                <label for="status" class="form-label">Status</label>
                                 <select class="form-select form-control" aria-label="status" name="status">
                                     <option value="Publier" selected>Publier</option>
                                     <option value="En Attente">En Attente</option>
@@ -186,4 +187,17 @@ Cpanel | CarSend
     <!--//container-fluid-->
 </div>
 <!--//app-content-->
+@endsection
+
+@section('extra-js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+@if (Session::has('success'))
+    <script>
+        swal("Good", "{!! Session::get('success') !!}", "success",{
+            button: "OK"
+        })
+    </script>
+@endif
+
 @endsection
