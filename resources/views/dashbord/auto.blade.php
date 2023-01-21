@@ -78,7 +78,7 @@ Cpanel | CarSend
                                 <!--//dropdown-toggle-->
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="#"><svg width="1em" height="1em"
+                                        <a class="dropdown-item" href="{{ route('cars.show, $car->id') }}"><svg width="1em" height="1em"
                                                 viewBox="0 0 16 16" class="bi bi-eye me-2" fill="currentColor"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd"

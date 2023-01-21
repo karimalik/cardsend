@@ -107,7 +107,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        //
+        return view('dashbord.show', compact('car'));
     }
 
     /**
@@ -118,7 +118,7 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        //
+        return view('dashbord.edit', compact('car'));
     }
 
     /**
@@ -130,7 +130,34 @@ class CarController extends Controller
      */
     public function update(Request $request, Car $car)
     {
-        //
+        $newImageName = time() . '-' . $request->marque . '.' . $request->image->extension();
+        $request->image->move(public_path('Cars'), $newImageName);
+        $data = [
+            'slug' => Str::slug($request->marque),
+            'marque' => $request->marque,
+            'modele' => $request->modele,
+            'prix' => $request->prix,
+            'negociable' => $request->negociable,
+            // 'type' => $request->type,
+            'etat' => $request->etat,
+            'carrosserie' => $request->carrosserie,
+            'killometrage' => $request->killometrage,
+            'annee' => $request->annee,
+            'moteur' => $request->moteur,
+            'couleur' => $request->couleur,
+            'carburant' => $request->carburant,
+            'transmission' => $request->transmission,
+            'volant' => $request->volant,
+            'climatisation' => $request->climatisation,
+            'description' => $request->description,
+            'image' => $newImageName,
+            'status' => $request->status,
+            'user_id' => Auth::user()->id,
+        ];
+
+        $car->update($data);
+
+        return back()->withSuccess('Your Post has been updated successfully!');
     }
 
     /**
@@ -141,6 +168,8 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        $car->delete();
+
+        return back()->withSuccess('Your Post has been deleted successfully!');
     }
 }
