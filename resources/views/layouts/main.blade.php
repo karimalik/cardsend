@@ -174,7 +174,7 @@
 
                         <li class="nav-item">
 
-                            <a class="nav-link" href="#">
+                            <a class="nav-link {{ Request::path() == 'cpanel/support' ? 'active' : ''  }}" href="{{ route('support.index')  }}">
                                 <span class="nav-icon">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">

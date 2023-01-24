@@ -51,6 +51,8 @@ Route::controller(FacebookAuthController::class)->group(function() {
 Route::group(['middleware' => 'auth' ,'prefix' => 'cpanel'], function() {
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('support', [App\Http\Controllers\SupportController::class, 'index'])->name('support.index');
+    Route::post('support', [App\Http\Controllers\SupportController::class, 'store'])->name('support.store');
     Route::resource('cars', CarController::class);
 });
 
