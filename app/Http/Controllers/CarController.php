@@ -36,9 +36,11 @@ class CarController extends Controller
         SEOTools::setDescription('Vente de voiture en ligne au cameroun');
         SEOTools::opengraph()->setUrl('http://127.0.0.1:8000/');
 
-        $cars = Car::latest()->paginate(8);
+        $cars = DB::table('cars')
+            ->select('*')
+            ->paginate(8);
 
-        return view('dashbord.auto', compact('cars'))->with(request()->input('page'));
+        return view('dashbord.auto', compact('cars'));
     }
 
     /**

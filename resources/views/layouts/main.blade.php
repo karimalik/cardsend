@@ -28,6 +28,7 @@
 
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="{{ asset('dash/assets/bootstrap/css/bootstrap.min.css') }}">
+    @yield('extra-css')
 </head>
 
 <body class="app">

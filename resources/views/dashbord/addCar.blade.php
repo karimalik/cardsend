@@ -17,7 +17,8 @@ Cpanel | CarSend
             <div class="col-12 col-md-12">
                 <div class="app-card app-card-settings shadow-sm p-4">
                     <div class="app-card-body">
-                        <form class="settings-form" method="POST" action="{{ route('cars.store') }}" enctype="multipart/form-data">
+                        <form class="settings-form" method="POST" action="{{ route('cars.store') }}"
+                            enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="marque" class="form-label">Marque*</label>
@@ -159,7 +160,8 @@ Cpanel | CarSend
                             </div>
                             <div class="mb-3">
                                 <label for="image" class="form-label">Image*</label>
-                                <input class="form-control" type="file" id="image" name="image" required accept=".jpg, .png, .jpeg, .svg">
+                                <input class="form-control" type="file" id="image" name="image" required
+                                    accept=".jpg, .png, .jpeg, .svg">
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Description</label>
@@ -173,7 +175,8 @@ Cpanel | CarSend
                                     <option value="En Attente">En Attente</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn app-btn-primary">Publier</button>
+                            <button type="submit" class="btn app-btn-primary">Publier</button> <a
+                                href="{{ route('cars.index') }}" class="btn btn-secondary">Retour</a>
                         </form>
                     </div>
                     <!--//app-card-body-->
@@ -190,14 +193,16 @@ Cpanel | CarSend
 @endsection
 
 @section('extra-js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 @if (Session::has('success'))
-    <script>
-        swal("Good", "{!! Session::get('success') !!}", "success",{
+<script>
+    swal("Good", "{!! Session::get('success') !!}", "success",{
             button: "OK"
         })
-    </script>
+</script>
 @endif
 
 @endsection
