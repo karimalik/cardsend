@@ -70,6 +70,7 @@ class CarController extends Controller
       $data = [
         'slug' => Str::slug($request->marque),
         'marque' => $request->marque,
+        'nombre_place' => $request->nombre_place,
         'modele' => $request->modele,
         'prix' => $request->prix,
         'negociable' => $request->negociable,
@@ -138,7 +139,7 @@ class CarController extends Controller
             'modele' => $request->modele,
             'prix' => $request->prix,
             'negociable' => $request->negociable,
-            // 'type' => $request->type,
+            'nombre_place' => $request->nombre_place,
             'etat' => $request->etat,
             'carrosserie' => $request->carrosserie,
             'killometrage' => $request->killometrage,

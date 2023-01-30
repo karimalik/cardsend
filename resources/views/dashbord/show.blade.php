@@ -128,6 +128,11 @@ Cpanel | CarSend
                                 </select>
                             </div>
                             <div class="mb-3">
+                                <label for="nombre_place" class="form-label">Nombre De Place*</label>
+                                <input type="text" class="form-control" id="nombre_place" name="nombre_place" placeholder="5"
+                                    value="{{ $car->nombre_place }}" readonly>
+                            </div>
+                            <div class="mb-3">
                                 <label for="volant" class="form-label">Volant</label>
                                 <select class="form-select form-control" aria-label="volant" name="volant" readonly>
                                     <option selected>{{ $car->volant }}</option>

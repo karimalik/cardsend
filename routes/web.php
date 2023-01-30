@@ -24,36 +24,26 @@ use App\Http\Controllers\FacebookAuthController;
 //     return view('pages.booking');
 // });
 
-Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index']);
-
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome.index');
 Route::get('booking', [App\Http\Controllers\BookingController::class, 'index']);
-
 Route::get('booking/{car}', [App\Http\Controllers\BookingController::class, 'show'])->name('booking.show');
-
+Route::get('contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
+Route::post('contact', [App\Http\Controllers\ContactController::class, 'sendMessage'])->name('contact.send');
 Route::get('about-us', function(){
     return view('pages.about');
 });
-
-
-Route::get('contact', function(){
-    return view('pages.contact');
-});
-
 Route::get('blog', function(){
     return view('pages.blog');
 });
-
 //sociale connexion
 Route::controller(OAuthController::class)->group(function() {
     Route::get('auth/redirect/google', 'redirect')->name('oauth.redirect');
     Route::get('auth/callback/google', 'callback')->name('oauth.callback');
 });
-
 Route::controller(FacebookAuthController::class)->group(function() {
     Route::get('auth/redirect/facebook', 'redirect')->name('fauth.redirect');
     Route::get('auth/callback/facebook', 'callback')->name('fauth.callback');
 });
-
 Route::group(['middleware' => 'auth' ,'prefix' => 'cpanel'], function() {
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -61,8 +51,5 @@ Route::group(['middleware' => 'auth' ,'prefix' => 'cpanel'], function() {
     Route::post('support', [App\Http\Controllers\SupportController::class, 'store'])->name('support.store');
     Route::resource('cars', CarController::class);
 });
-
-
-
 Auth::routes(['verify' => true]);
 

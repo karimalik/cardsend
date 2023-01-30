@@ -88,7 +88,7 @@ Accueil : CarSend : Vente et achats de vehicule
                                     </div>
                                 </div>
                             </div>
-                            <p><a href="#" class="btn btn-primary py-3 px-4">Vendre Ma Voiture</a></p>
+                            <p><a href="{{ route('cars.create') }}" class="btn btn-primary py-3 px-4">Vendre Ma Voiture</a></p>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@ Accueil : CarSend : Vente et achats de vehicule
                                     <span class="cat">{{ $car->modele }}</span>
                                     <p class="price ml-auto">XFA {{ $car->prix }}</p>
                                 </div>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Acheter
+                                <p class="d-flex mb-0 d-block"><a href="{{ route('booking.show', $car->id) }}" class="btn btn-primary py-2 mr-1">Acheter
                                     </a> <a href="{{ route('booking.show', $car->id) }}" class="btn btn-secondary py-2 ml-1">Détails</a></p>
                             </div>
                         </div>
@@ -159,7 +159,7 @@ Accueil : CarSend : Vente et achats de vehicule
                         pour sa mise en vente.
                     </p>
 
-                    <p><a href="#" class="btn btn-primary py-3 px-4">Vendre Ma Voiture</a></p>
+                    <p><a href="{{ route('cars.create') }}" class="btn btn-primary py-3 px-4">Vendre Ma Voiture</a></p>
                 </div>
             </div>
         </div>

@@ -167,6 +167,7 @@ CarSend | Detail
                                         <li class="check"><span class="ion-ios-checkmark"></span>Climatisation: {{ $car->climatisation }}</li>
                                         <li class="check"><span class="ion-ios-checkmark"></span>Prix: {{ $car->prix }}</li>
                                         <li class="check"><span class="ion-ios-checkmark"></span>Negociable: {{ $car->negociable }}</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Nombre De Place: {{ $car->nombre_place }}</li>
                                     </ul>
                                 </div>
                             </div>

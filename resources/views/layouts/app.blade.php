@@ -58,7 +58,7 @@
 
                     @auth
                     <li class="nav-item {{ Request::path() == '/' ? 'active' : ''}}">
-                        <a href={{ url('/') }}" class="nav-link">Accueil</a>
+                        <a href={{ route('welcome.index') }}" class="nav-link">Accueil</a>
                     </li>
                     <li class="nav-item {{ Request::path() == 'about-us' ? 'active' : ''}}">
                         <a href="{{ url('about-us') }}" class="nav-link">A Propos</a>
@@ -67,7 +67,7 @@
                         <a href="{{ url('booking') }}" class="nav-link">Booking</a>
                     </li>
                     <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
-                        <a href="{{ url('contact') }}" class="nav-link">Contact</a>
+                        <a href="{{ route('contact.index') }}" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item {{ Request::path() == 'home' ? 'active' : ''}}">
                         <a href="{{ route('home') }}" class="nav-link">Dashoard</a>
@@ -82,7 +82,7 @@
                     </li>
                     @else
                     <li class=" nav-item {{ Request::path()=='/' ? 'active' : '' }}">
-                        <a href="{{ url('/') }}" class="nav-link">Accueil</a>
+                        <a href="{{ route('welcome.index') }}" class="nav-link">Accueil</a>
                     </li>
                     <li class="nav-item {{ Request::path() == 'about-us' ? 'active' : ''}}">
                         <a href="{{ url('about-us')  }}" class="nav-link">A Propos</a>
@@ -91,7 +91,7 @@
                         <a href="{{ url('booking')  }}" class="nav-link">Booking</a>
                     </li>
                     <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
-                        <a href="{{ url('contact')  }}" class="nav-link">Contact</a>
+                        <a href="{{ route('contact.index')  }}" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item {{ Request::path() == 'login' ? 'active' : ''}}">
                         <a href="{{ route('login') }}" class="nav-link">Connexion</a>

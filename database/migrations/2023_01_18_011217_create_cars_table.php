@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('prix')->nullable();
             $table->string('slug')->nullable();
             $table->string('negociable')->nullable();
-            // $table->string('type')->nullable();
+            $table->string('nombre_place')->nullable();
             $table->string('etat')->nullable();
             $table->string('marque')->nullable();
             $table->string('modele')->nullable();

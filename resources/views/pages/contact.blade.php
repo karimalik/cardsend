@@ -53,19 +53,20 @@ Contact : CarSend : achat de voiture en ligne : vente automobile
                 </div>
             </div>
             <div class="col-md-8 block-9 mb-md-5">
-                <form action="#" class="bg-light p-5 contact-form">
+                <form method="POST" action="{{ route('contact.send') }}" class="bg-light p-5 contact-form">
+                    @csrf
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nom">
+                        <input type="text" class="form-control" placeholder="Nom" name="nom" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email">
+                        <input type="email" class="form-control" placeholder="Email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Sujet">
+                        <input type="text" class="form-control" placeholder="Sujet" name="sujet" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="" id="" cols="30" rows="7" class="form-control"
-                            placeholder="Message"></textarea>
+                        <textarea id="message" cols="30" rows="7" class="form-control"
+                            placeholder="Message" name="message" required></textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Envoyer </button>

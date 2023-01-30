@@ -18,7 +18,7 @@ class Car extends Model
     protected $fillable = [
         'prix',
         'negociable',
-        // 'type',
+        'nombre_place',
         'etat',
         'marque',
         'modele',

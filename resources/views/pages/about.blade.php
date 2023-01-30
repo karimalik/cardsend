@@ -44,7 +44,7 @@ About-Us : CarSend
                         Il vous suffit juste de créer votre compte c'est totalement gartuit et de poster votre vehicule
                         pour sa mise en vente.
                     </p>
-                    <p><a href="#" class="btn btn-primary py-3 px-4">Vendre Ma Voiture</a></p>
+                    <p><a href="{{ route('cars.create') }}" class="btn btn-primary py-3 px-4">Vendre Ma Voiture</a></p>
                 </div>
             </div>
         </div>
@@ -112,7 +112,7 @@ About-Us : CarSend
         <div class="row justify-content-end">
             <div class="col-md-6 heading-section heading-section-white ftco-animate">
                 <h2 class="mb-3">Souhaitez Vous Vendre Votre Voiture?</h2>
-                <a href="#" class="btn btn-primary btn-lg">Vendre Ma Voiture</a>
+                <a href="{{ route('cars.create') }}" class="btn btn-primary btn-lg">Vendre Ma Voiture</a>
             </div>
         </div>
     </div>
