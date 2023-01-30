@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/icomoon.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <script defer src="{{ asset('dash/assets/plugins/fontawesome/js/all.min.js') }}"></script>
     @include('sweetalert::alert')
 
     <!-- Scripts -->

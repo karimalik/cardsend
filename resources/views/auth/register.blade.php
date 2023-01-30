@@ -31,7 +31,28 @@ Inscription : CarSend
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
+                    </div>
+                    <div class="form-group first">
+                        <label for="telephone">Telephone</label>
+                        <input type="text" class="form-control @error('telephone') is-invalid @enderror" id="telephone"
+                            name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone">
 
+                        @error('telephone')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                    <div class="form-group first">
+                        <label for="addresse">Addresse</label>
+                        <input type="text" class="form-control @error('addresse') is-invalid @enderror" id="addresse"
+                            name="addresse" value="{{ old('addresse') }}" required autocomplete="addresse">
+
+                        @error('addresse')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group first">
                         <label for="email">Email</label>
@@ -43,7 +64,6 @@ Inscription : CarSend
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-
                     </div>
                     <div class="form-group last mb-4">
                         <label for="password">Mot de passe</label>

@@ -28,6 +28,8 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index']);
 
 Route::get('booking', [App\Http\Controllers\BookingController::class, 'index']);
 
+Route::get('booking/{car}', [App\Http\Controllers\BookingController::class, 'show'])->name('booking.show');
+
 Route::get('about-us', function(){
     return view('pages.about');
 });

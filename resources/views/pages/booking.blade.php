@@ -31,13 +31,13 @@ Booking : CarSend : Achat de vehicule au cameroun et en afrique
                         style="background-image: url({{ asset('Cars/' . $car->image) }});">
                     </div>
                     <div class="text">
-                        <h2 class="mb-0"><a href="car-single.html">{{ $car->marque }}</a></h2>
+                        <h2 class="mb-0"><a href="{{ route('booking.show', $car->id) }}">{{ $car->marque }}</a></h2>
                         <div class="d-flex mb-3">
                             <span class="cat">{{ $car->modele }}</span>
                             <p class="price ml-auto">XFA{{ $car->prix }}</p>
                         </div>
                         <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Acheter</a> <a
-                                href="car-single.html" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                                href="{{ route('booking.show', $car->id) }}" class="btn btn-secondary py-2 ml-1">Details</a></p>
                     </div>
                 </div>
             </div>

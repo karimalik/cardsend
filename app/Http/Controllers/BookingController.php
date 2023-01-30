@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,4 +22,16 @@ class BookingController extends Controller
         
         return view('pages.booking', compact('cars'));
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
+     */
+
+     public function show(Car $car)
+     {
+        return view('pages.details', compact('car'));
+     }
 }
