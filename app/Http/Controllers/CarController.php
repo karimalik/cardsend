@@ -64,13 +64,6 @@ class CarController extends Controller
     public function store(Request $request)
     {
 
-    //   if ($request->hasfile('image')) {
-    //     # code...
-    //     $file = $request->file('image');
-    //     $extension = $file->getClientOriginalExtension();
-    //     $filename = time(). '.' .$extension;
-    //     $file->move('galerie/cars/', $filename);
-    //   }
 
       $newImageName = time() . '-' . $request->marque . '.' . $request->image->extension();
       $request->image->move(public_path('Cars'), $newImageName);
@@ -80,7 +73,6 @@ class CarController extends Controller
         'modele' => $request->modele,
         'prix' => $request->prix,
         'negociable' => $request->negociable,
-        // 'type' => $request->type,
         'etat' => $request->etat,
         'carrosserie' => $request->carrosserie,
         'killometrage' => $request->killometrage,

@@ -17,17 +17,21 @@ use App\Http\Controllers\FacebookAuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('booking', function(){
+//     return view('pages.booking');
+// });
+
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index']);
+
+Route::get('booking', [App\Http\Controllers\BookingController::class, 'index']);
 
 Route::get('about-us', function(){
     return view('pages.about');
 });
 
-Route::get('booking', function(){
-    return view('pages.booking');
-});
 
 Route::get('contact', function(){
     return view('pages.contact');

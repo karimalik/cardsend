@@ -98,7 +98,7 @@
             <div class="sidepanel-inner d-flex flex-column">
                 <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
                 <div class="app-branding">
-                    <a class="app-logo" href="index.html"><img class="logo-icon me-2"
+                    <a class="app-logo" href="{{ url('/') }}"><img class="logo-icon me-2"
                             src="{{ asset('dash/assets/images/Logo.png') }}" alt="logo"><span class="logo-text">Car<i
                                 style="color: green">Send</i> </span></a>
 

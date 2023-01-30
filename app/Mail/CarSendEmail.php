@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
@@ -34,7 +35,7 @@ class CarSendEmail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address($this->data->Auth::user()->email, $this->data->Auth::user()->name),
+            from: new Address('infos@carsend.com', 'Customer Service'),
             subject: 'Nouveau Post',
         );
     }

@@ -20,7 +20,7 @@ Dashbord | CarSend
                             <div>
                                 Bienvenue sur la plateforme CarSend, première plateforme de vente et
                                 achat de véhicule d'occasion et/ou neuf. Mettez votre en vente en cliquant sur le bouton
-                                "Ajouter Un Poste".
+                                "Ajouter Une Voiture".
                             </div>
                         </div>
                         <!--//col-->

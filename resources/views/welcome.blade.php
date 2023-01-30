@@ -108,70 +108,25 @@ Accueil : CarSend : Vente et achats de vehicule
         <div class="row">
             <div class="col-md-12">
                 <div class="carousel-car owl-carousel">
+                    @foreach ($cars as $car)
                     <div class="item">
                         <div class="car-wrap rounded ftco-animate">
                             <div class="img rounded d-flex align-items-end"
-                                style="background-image: url('assets/images/car-1.jpg');">
+                                style="background-image: url({{ asset('Cars/' . $car->image) }});">
                             </div>
                             <div class="text">
-                                <h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
+                                <h2 class="mb-0"><a href="#">{{ $car->marque }}</a></h2>
                                 <div class="d-flex mb-3">
-                                    <span class="cat">Cheverolet</span>
-                                    <p class="price ml-auto">XFA500</p>
+                                    <span class="cat">{{ $car->modele }}</span>
+                                    <p class="price ml-auto">XFA {{ $car->prix }}</p>
                                 </div>
                                 <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Acheter
                                     </a> <a href="#" class="btn btn-secondary py-2 ml-1">Détails</a></p>
                             </div>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="car-wrap rounded ftco-animate">
-                            <div class="img rounded d-flex align-items-end"
-                                style="background-image: url('assets/images/car-2.jpg');">
-                            </div>
-                            <div class="text">
-                                <h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-                                <div class="d-flex mb-3">
-                                    <span class="cat">Cheverolet</span>
-                                    <p class="price ml-auto">XFA500</p>
-                                </div>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Acheter
-                                    </a> <a href="#" class="btn btn-secondary py-2 ml-1">Détails</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="car-wrap rounded ftco-animate">
-                            <div class="img rounded d-flex align-items-end"
-                                style="background-image: url('assets/images/car-3.jpg');">
-                            </div>
-                            <div class="text">
-                                <h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-                                <div class="d-flex mb-3">
-                                    <span class="cat">Cheverolet</span>
-                                    <p class="price ml-auto">XFA500</p>
-                                </div>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">
-                                    Acheter</a> <a href="#" class="btn btn-secondary py-2 ml-1">Détails</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="car-wrap rounded ftco-animate">
-                            <div class="img rounded d-flex align-items-end"
-                                style="background-image: url('assets/images/car-4.jpg');">
-                            </div>
-                            <div class="text">
-                                <h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-                                <div class="d-flex mb-3">
-                                    <span class="cat">Cheverolet</span>
-                                    <p class="price ml-auto">XFA500</p>
-                                </div>
-                                <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Acheter
-                                    </a> <a href="#" class="btn btn-secondary py-2 ml-1">Détails</a></p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -191,13 +146,17 @@ Accueil : CarSend : Vente et achats de vehicule
 
                     <p>
                         Première plateforme web de vente et achat de véhicules en ligne au <strong>Cameroun</strong>.
-                        Nous vous facilitons la vente et l'achat de votre automobile. Si vous souhaitez achetez un véhicule d'ocassioin ou neuf
-                        en fonction de votre budget, trouvez les meilleurs choix de vehicule sur <strong>CarSend</strong> , trouvez des centaines de marques et des modèles.
+                        Nous vous facilitons la vente et l'achat de votre automobile. Si vous souhaitez achetez un
+                        véhicule d'ocassioin ou neuf
+                        en fonction de votre budget, trouvez les meilleurs choix de vehicule sur
+                        <strong>CarSend</strong> , trouvez des centaines de marques et des modèles.
                     </p>
                     <p>
-                        Besoins de vendre votre véhicule au <strong>Cameroun</strong>, n'hesitez pas une seule adresse <strong>CarSend</strong>
+                        Besoins de vendre votre véhicule au <strong>Cameroun</strong>, n'hesitez pas une seule adresse
+                        <strong>CarSend</strong>
                         Que vous souyez un concessionnaire ou un particulier, vous pouvez vendre votre véhicule.
-                        Il vous suffit juste de créer votre compte c'est totalement gartuit et de poster votre vehicule pour sa mise en vente.
+                        Il vous suffit juste de créer votre compte c'est totalement gartuit et de poster votre vehicule
+                        pour sa mise en vente.
                     </p>
 
                     <p><a href="#" class="btn btn-primary py-3 px-4">Vendre Ma Voiture</a></p>
@@ -223,7 +182,8 @@ Accueil : CarSend : Vente et achats de vehicule
                     <div class="text w-100">
                         <h3 class="heading mb-2">Conseil</h3>
                         <p>
-                            Nous sommes proches de vous et travaillons à développer une relation personnalisée avec chacun de vous.
+                            Nous sommes proches de vous et travaillons à développer une relation personnalisée avec
+                            chacun de vous.
                         </p>
                     </div>
                 </div>
@@ -259,7 +219,8 @@ Accueil : CarSend : Vente et achats de vehicule
                     <div class="text w-100">
                         <h3 class="heading mb-2">Securité</h3>
                         <p>
-                            Nous sommes proches de vous et travaillons à développer une relation personnalisée avec chacun de vous.
+                            Nous sommes proches de vous et travaillons à développer une relation personnalisée avec
+                            chacun de vous.
                         </p>
                     </div>
                 </div>
@@ -280,7 +241,8 @@ Accueil : CarSend : Vente et achats de vehicule
         <div class="row d-flex">
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry justify-content-end">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('assets/images/image_1.jpg');">
+                    <a href="blog-single.html" class="block-20"
+                        style="background-image: url('assets/images/image_1.jpg');">
                     </a>
                     <div class="text pt-4">
                         <div class="meta mb-3">
@@ -294,7 +256,8 @@ Accueil : CarSend : Vente et achats de vehicule
             </div>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry justify-content-end">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('assets/images/image_2.jpg');">
+                    <a href="blog-single.html" class="block-20"
+                        style="background-image: url('assets/images/image_2.jpg');">
                     </a>
                     <div class="text pt-4">
                         <div class="meta mb-3">
@@ -308,7 +271,8 @@ Accueil : CarSend : Vente et achats de vehicule
             </div>
             <div class="col-md-4 d-flex ftco-animate">
                 <div class="blog-entry">
-                    <a href="blog-single.html" class="block-20" style="background-image: url('assets/images/image_3.jpg');">
+                    <a href="blog-single.html" class="block-20"
+                        style="background-image: url('assets/images/image_3.jpg');">
                     </a>
                     <div class="text pt-4">
                         <div class="meta mb-3">
