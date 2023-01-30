@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Support;
+use App\Mail\SupportMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SupportController extends Controller
 {
@@ -18,8 +21,19 @@ class SupportController extends Controller
 
     public  function  store(Request $request) {
 
-        $support = [
-
+        $data = [
+            'nom' => $request->nom,
+            'email' => $request->email,
+            'sujet' => $request->sujet,
+            'message' => $request->message,
         ];
+
+        $support = Support::create($data);
+
+
+        if ($support) {
+            Mail::to('karimkompissi@gmail.com')->send(new SupportMail($data));
+        }
+        return back()->withSussess('Votre message a bien ete envoye !');
     }
 }

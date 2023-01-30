@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Mail\CarSendEmail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Artesaos\SEOTools\Facades\SEOTools;
-use RealRashid\SweetAlert\Facades\Alert;
-use Cviebrock\EloquentSluggable\Services\SlugService;
+
 
 class CarController extends Controller
 {
@@ -96,7 +97,12 @@ class CarController extends Controller
         'user_id' => Auth::user()->id,
       ];
 
-      Car::create($data);
+      $saveCar = Car::create($data);
+
+      if($saveCar)
+      {
+        Mail::to('karimkompissi@gmail.com')->send(new CarSendEmail($data));
+      }
 
       return back()->withSuccess('Your post has been successfully add!');
     }

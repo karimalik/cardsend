@@ -65,9 +65,6 @@
                     <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
                         <a href="{{ url('booking') }}" class="nav-link">Booking</a>
                     </li>
-                    <li class="nav-item {{ Request::path() == 'blog' ? 'active' : ''}}">
-                        <a href="{{ url('blog') }}" class="nav-link">Blog</a>
-                    </li>
                     <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
                         <a href="{{ url('contact') }}" class="nav-link">Contact</a>
                     </li>
@@ -91,9 +88,6 @@
                     </li>
                     <li class="nav-item {{ Request::path() == 'booking' ? 'active' : ''}}">
                         <a href="{{ url('booking')  }}" class="nav-link">Booking</a>
-                    </li>
-                    <li class="nav-item {{ Request::path() == 'blog' ? 'active' : ''}}">
-                        <a href="{{ url('blog') }}" class="nav-link">Blog</a>
                     </li>
                     <li class="nav-item {{ Request::path() == 'contact' ? 'active' : ''}}">
                         <a href="{{ url('contact')  }}" class="nav-link">Contact</a>
