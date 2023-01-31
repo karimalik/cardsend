@@ -23,18 +23,18 @@ use App\Http\Controllers\FacebookAuthController;
 // Route::get('booking', function(){
 //     return view('pages.booking');
 // });
-
+Route::get('blog', function(){
+    return view('pages.blog');
+});
+Route::get('about-us', function(){
+    return view('pages.about');
+});
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome.index');
 Route::get('booking', [App\Http\Controllers\BookingController::class, 'index']);
 Route::get('booking/{car}', [App\Http\Controllers\BookingController::class, 'show'])->name('booking.show');
 Route::get('contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
 Route::post('contact', [App\Http\Controllers\ContactController::class, 'sendMessage'])->name('contact.send');
-Route::get('about-us', function(){
-    return view('pages.about');
-});
-Route::get('blog', function(){
-    return view('pages.blog');
-});
+Route::get('search', [App\Http\Controllers\SearchController::class, 'search'])->name('search.store');
 //sociale connexion
 Route::controller(OAuthController::class)->group(function() {
     Route::get('auth/redirect/google', 'redirect')->name('oauth.redirect');

@@ -31,10 +31,10 @@ Accueil : CarSend : Vente et achats de vehicule
                 <div class="row no-gutters">
                     <div class="col-md-4 d-flex align-items-center ">
                         <form action="#" class="request-form ftco-animate bg-primary">
-                            {{-- <h2>Make your trip</h2> --}}
+                            <h2>Faites Votre Recherches</h2>
                             <div class="form-group">
                                 <label for="" class="label">Ville</label>
-                                <input type="text" class="form-control" placeholder="Douala" name="douala">
+                                <input type="text" class="form-control" placeholder="Douala" name="ville">
                             </div>
                             <div class="form-group">
                                 <label for="" class="label">Marque</label>
@@ -42,8 +42,8 @@ Accueil : CarSend : Vente et achats de vehicule
                             </div>
                             <div class="d-flex">
                                 <div class="form-group mr-2">
-                                    <label for="" class="label">Type</label>
-                                    <input type="text" class="form-control" name="type" placeholder="Berline">
+                                    <label for="" class="label">Modele</label>
+                                    <input type="text" class="form-control" name="modele" placeholder="Berline">
                                 </div>
                                 <div class="form-group ml-2">
                                     <label for="" class="label">Prix</label>

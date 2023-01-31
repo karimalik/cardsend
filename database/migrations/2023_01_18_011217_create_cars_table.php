@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('negociable')->nullable();
             $table->string('nombre_place')->nullable();
             $table->string('etat')->nullable();
+            $table->string('ville')->nullable();
             $table->string('marque')->nullable();
             $table->string('modele')->nullable();
             $table->string('carrosserie')->nullable();

@@ -22,7 +22,7 @@
 | Negociable    | {{ $data['negociable'] }}       |
 | Description   | {{ $data['description'] }}      |
 | User          | {{ $data['user_id'] }}          |
-|               |
+| Ville         | {{ $data['ville'] }}            |
 </x-mail::table>
 
 Thanks,<br>

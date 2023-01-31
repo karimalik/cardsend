@@ -20,6 +20,7 @@ class Car extends Model
         'negociable',
         'nombre_place',
         'etat',
+        'ville',
         'marque',
         'modele',
         'carrosserie',

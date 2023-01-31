@@ -164,6 +164,11 @@ Cpanel | CarSend
                                 </select>
                             </div>
                             <div class="mb-3">
+                                <label for="ville" class="form-label">Ville*</label>
+                                <input type="text" class="form-control" id="ville" name="ville" placeholder="5"
+                                    value="" required>
+                            </div>
+                            <div class="mb-3">
                                 <label for="image" class="form-label">Image*</label>
                                 <input class="form-control" type="file" id="image" name="image" required
                                     accept=".jpg, .png, .jpeg, .svg">
