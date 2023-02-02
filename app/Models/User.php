@@ -23,6 +23,7 @@ class User extends Authenticatable
         'password',
         'telephone',
         'addresse',
+        'role',
         'google_id',
         'google_token',
         'google_refresh_token',

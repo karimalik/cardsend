@@ -30,7 +30,8 @@ Accueil : CarSend : Vente et achats de vehicule
             <div class="col-md-12	featured-top">
                 <div class="row no-gutters">
                     <div class="col-md-4 d-flex align-items-center ">
-                        <form action="#" class="request-form ftco-animate bg-primary">
+                        <form method="POST" action="{{ route('search.store') }}" class="request-form ftco-animate bg-primary">
+                            @csrf
                             <h2>Faites Votre Recherches</h2>
                             <div class="form-group">
                                 <label for="" class="label">Ville</label>
@@ -38,7 +39,7 @@ Accueil : CarSend : Vente et achats de vehicule
                             </div>
                             <div class="form-group">
                                 <label for="" class="label">Marque</label>
-                                <input type="text" class="form-control" placeholder="Toyota">
+                                <input type="text" class="form-control" name="toyota" placeholder="Toyota">
                             </div>
                             <div class="d-flex">
                                 <div class="form-group mr-2">
@@ -52,7 +53,7 @@ Accueil : CarSend : Vente et achats de vehicule
                             </div>
 
                             <div class="form-group">
-                                <input type="submit" value="Rechercher" class="btn btn-secondary py-3 px-4">
+                                <button type="submit" class="btn btn-secondary py-3 px-4">Rechercher</button>
                             </div>
                         </form>
                     </div>

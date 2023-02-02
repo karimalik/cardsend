@@ -19,15 +19,20 @@ class SearchController extends Controller
         $modele = $request->modele;
         $prix = $request->prix;
 
-        $searchs = DB::table('cars')
+        $cars = DB::table('cars')
                     ->select('*')
                     ->where('ville', '=', $ville)
-                    ->where('marque', '=', $marque)
-                    ->orWhere(function($query, Request $request){
-                        $query->where('modele', '=', $request->modele)
-                              ->where('prix', '=', $request->prix);
-                    });
+                    ->get();
 
-        return view('pages.result', compact('searchs'));
+       
+
+        $countCars = DB::table('cars')
+                    ->where('ville', '=', $ville)
+                    ->where('marque', '=', $marque)
+                    ->where('modele', '=', $modele)
+                    ->where('prix', '=', $prix)
+                    ->count();
+
+        return view('pages.result', compact('cars', 'countCars'));
     }
 }

@@ -165,7 +165,7 @@ Cpanel | CarSend
                             </div>
                             <div class="mb-3">
                                 <label for="ville" class="form-label">Ville*</label>
-                                <input type="text" class="form-control" id="ville" name="ville" placeholder="5"
+                                <input type="text" class="form-control" id="ville" name="ville" placeholder="Douala"
                                     value="" required>
                             </div>
                             <div class="mb-3">
