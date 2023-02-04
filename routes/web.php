@@ -46,10 +46,10 @@ Route::controller(FacebookAuthController::class)->group(function() {
     Route::get('auth/callback/facebook', 'callback')->name('fauth.callback');
 });
 Route::group(['middleware' => ['auth', 'verified'] ,'prefix' => 'cpanel'], function() {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('support', [App\Http\Controllers\SupportController::class, 'index'])->name('support.index');
-    Route::post('support', [App\Http\Controllers\SupportController::class, 'store'])->name('support.store');
-    Route::resource('cars', CarController::class);
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('role:user');
+    Route::get('support', [App\Http\Controllers\SupportController::class, 'index'])->name('support.index')->middleware('role:user');
+    Route::post('support', [App\Http\Controllers\SupportController::class, 'store'])->name('support.store')->middleware('role:user');
+    Route::resource('cars', CarController::class)->middleware('role:user');
 });
 Route::group(['middleware' => 'auth', 'prefix' => 'cs-admin'], function (){
 
