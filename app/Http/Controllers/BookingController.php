@@ -10,7 +10,7 @@ class BookingController extends Controller
 {
     /**
      * Display a listing resource
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -19,7 +19,7 @@ class BookingController extends Controller
                     ->select('*')
                     ->where('status', '=', 'Publier')
                     ->paginate(6);
-        
+
         return view('pages.booking', compact('cars'));
     }
 

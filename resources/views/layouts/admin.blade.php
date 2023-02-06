@@ -47,7 +47,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/dashboard.css')}}">
     <link class="skin" rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/color/color-1.css')}}">
-
+    @yield('admin-extra-css')
 </head>
 <body class="ttr-opened-sidebar ttr-pinned-sidebar">
 
@@ -139,7 +139,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#" class="ttr-material-button"><span class="ttr-label">Liste Des Voitures</span></a>
+                            <a href="{{ route('auto.index') }}" class="ttr-material-button"><span class="ttr-label">Liste Des Voitures</span></a>
                         </li>
                         <li>
                             <a href="#" class="ttr-material-button"><span class="ttr-label">Ajouter Une Voiture</span></a>
@@ -194,6 +194,7 @@
 <script src="{{asset('admin/assets/vendors/calendar/moment.min.js')}}"></script>
 <script src="{{asset('admin/assets/vendors/calendar/fullcalendar.js')}}"></script>
 <script src="{{asset('admin/assets/vendors/switcher/switcher.js')}}"></script>
+@yield('admin-extra-js')
 <script>
     $(document).ready(function() {
 

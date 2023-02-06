@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\AutoController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OAuthController;
 use App\Http\Controllers\FacebookAuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +20,6 @@ use App\Http\Controllers\FacebookAuthController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('booking', function(){
-//     return view('pages.booking');
-// });
 Route::get('blog', function(){
     return view('pages.blog');
 });
@@ -56,6 +52,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'cs-admin'], function (){
     Route::controller(DashboardController::class)->group(function (){
         Route::get('dashboard', 'index')->middleware('role:admin');
     });
+    Route::resource('auto', AutoController::class)->middleware('role:admin');
 });
 Auth::routes(['verify' => true]);
 
