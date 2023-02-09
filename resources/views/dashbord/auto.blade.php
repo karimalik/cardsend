@@ -103,7 +103,7 @@ Cpanel | CarSend
                                     <li>
                                         <form action="{{ route('cars.destroy', $car->id) }}" method="POST">
                                             @csrf
-                                            {{-- @method('DELETE') --}}
+                                            @method('DELETE')
                                             <input name="_method" type="hidden" value="DELETE">
                                             <button class="dropdown-item show-alert-delete-box" type="submit"><svg
                                                     width="1em" height="1em" viewBox="0 0 16 16"

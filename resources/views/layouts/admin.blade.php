@@ -42,6 +42,7 @@
 
     <!-- SHORTCODES ============================================= -->
     <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/shortcodes/shortcodes.css')}}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('admin/assets/vendors/file-upload/imageuploadify.min.css') }}"> --}}
 
     <!-- STYLESHEETS ============================================= -->
     <link rel="stylesheet" type="text/css" href="{{asset('admin/assets/css/style.css')}}">
@@ -175,6 +176,7 @@
 <div class="ttr-overlay"></div>
 
 <!-- External JavaScripts -->
+{{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
 <script src="{{asset('admin/assets/js/jquery.min.js')}}"></script>
 <script src="{{asset('admin/assets/vendors/bootstrap/js/popper.min.js')}}"></script>
 <script src="{{asset('admin/assets/vendors/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -193,10 +195,13 @@
 <script src="{{asset('admin/assets/js/admin.js')}}"></script>
 <script src="{{asset('admin/assets/vendors/calendar/moment.min.js')}}"></script>
 <script src="{{asset('admin/assets/vendors/calendar/fullcalendar.js')}}"></script>
+{{-- <script src="{{ asset('admin/assets/vendors/file-upload/imageuploadify.min.js') }}"></script> --}}
 <script src="{{asset('admin/assets/vendors/switcher/switcher.js')}}"></script>
 @yield('admin-extra-js')
 <script>
     $(document).ready(function() {
+
+        $('#dataTable').DataTable();
 
         $('#calendar').fullCalendar({
             header: {
