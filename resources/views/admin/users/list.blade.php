@@ -14,10 +14,10 @@ Admin DashBoard | CarSend
 <main class="ttr-wrapper">
     <div class="container-fluid">
         <div class="db-breadcrumb">
-            <h4 class="breadcrumb-title">Liste Des Voitures</h4>
+            <h4 class="breadcrumb-title">Liste Des Utilisateurs</h4>
             <ul class="db-breadcrumb-list">
                 <li><a href="{{ route('welcome.index') }}"><i class="fa fa-home"></i>Home</a></li>
-                <li>Liste Des Voitures</li>
+                <li>Liste Des Utilisateurs</li>
             </ul>
         </div>
         <!-- Card -->
@@ -25,7 +25,7 @@ Admin DashBoard | CarSend
         <!-- DataTales Example -->
         <div class="card shadow mb-4 mt-3">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary"> <i class="fa fa-car"></i> Liste Des Utilisateurs</h6>
+                <h6 class="m-0 font-weight-bold text-primary"> <i class="fa fa-users"></i> Liste Des Utilisateurs</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
