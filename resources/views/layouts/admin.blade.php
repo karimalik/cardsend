@@ -143,7 +143,7 @@
                             <a href="{{ route('auto.index') }}" class="ttr-material-button"><span class="ttr-label">Liste Des Voitures</span></a>
                         </li>
                         <li>
-                            <a href="#" class="ttr-material-button"><span class="ttr-label">Ajouter Une Voiture</span></a>
+                            <a href="{{ route('auto.create') }}" class="ttr-material-button"><span class="ttr-label">Ajouter Une Voiture</span></a>
                         </li>
                     </ul>
                 </li>
@@ -155,10 +155,10 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="#" class="ttr-material-button"><span class="ttr-label">Liste Des Utilisateurs</span></a>
+                            <a href="{{ route('user.index') }}" class="ttr-material-button"><span class="ttr-label">Liste Des Utilisateurs</span></a>
                         </li>
                         <li>
-                            <a href="#" class="ttr-material-button"><span class="ttr-label">Ajouter Un Utilisateur</span></a>
+                            <a href="{{ route('user.create') }}" class="ttr-material-button"><span class="ttr-label">Ajouter Un Utilisateur</span></a>
                         </li>
                     </ul>
                 </li>

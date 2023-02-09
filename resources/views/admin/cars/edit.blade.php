@@ -23,49 +23,57 @@ Dashbord Admin | CarSend
                         <h4> <i class="fa fa-car"></i> &nbsp; Fiche D'Information Du Vehicule {{ $auto->marque }}</h4>
                     </div>
                     <div class="widget-inner">
-                        <form class="edit-profile m-b30">
+                        <form action="{{ route('auto.update', $auto->id) }}" method="POST" class="edit-profile m-b30"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
                             <div class="row">
                                 <div class="col-12">
                                     <div class="ml-auto">
                                         <h3>1. Basic info</h3>
                                     </div>
                                 </div>
-                                <div action="{{ route('auto.update', $auto->id) }}" method="POST" class="form-group col-6" enctype="multipart/form-data">
-                                    @csrf
-                                    @method('PUT')
+                                <div class="form-group col-6">
+
                                     <label class="col-form-label">Marque</label>
                                     <div>
-                                        <input class="form-control" type="text" value="{{ $auto->marque }}" name="marque">
+                                        <input class="form-control" type="text" value="{{ $auto->marque }}"
+                                            name="marque">
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
                                     <label class="col-form-label">Modele</label>
                                     <div>
-                                        <input class="form-control" type="text" value="{{ $auto->modele }}" name="modele">
+                                        <input class="form-control" type="text" value="{{ $auto->modele }}"
+                                            name="modele">
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
                                     <label class="col-form-label">Carrosserie</label>
                                     <div>
-                                        <input class="form-control" type="text" value="{{ $auto->carrosserie }}" name="carrosserie">
+                                        <input class="form-control" type="text" value="{{ $auto->carrosserie }}"
+                                            name="carrosserie">
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
                                     <label class="col-form-label">Moteur</label>
                                     <div>
-                                        <input class="form-control" type="text" value="{{ $auto->moteur }}" name="moteur">
+                                        <input class="form-control" type="text" value="{{ $auto->moteur }}"
+                                            name="moteur">
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
                                     <label class="col-form-label">Killometrage</label>
                                     <div>
-                                        <input class="form-control" type="text" value="{{ $auto->killometrage }}" name="killometrage">
+                                        <input class="form-control" type="text" value="{{ $auto->killometrage }}"
+                                            name="killometrage">
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
                                     <label class="col-form-label">Nombre De Place</label>
                                     <div>
-                                        <input class="form-control" type="text" value="{{ $auto->nombre_place }}" name="nombre_place">
+                                        <input class="form-control" type="text" value="{{ $auto->nombre_place }}"
+                                            name="nombre_place">
                                     </div>
                                 </div>
                                 <div class="form-group col-6">
@@ -227,12 +235,12 @@ Dashbord Admin | CarSend
                                     <label class="col-form-label">Auteur</label>
                                     <div>
                                         <select class="form-select form-control" aria-label="climatisation"
-                                        name="user_id">
-                                        <option selected>{{ $auto->user->name }}</option>
-                                        @foreach ($users as $user)
-                                        <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                        @endforeach
-                                    </select>
+                                            name="user_id">
+                                            <option value="{{ $auto->user->id }}" selected>{{ $auto->user->name }}</option>
+                                            @foreach ($users as $user)
+                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
 
@@ -246,7 +254,8 @@ Dashbord Admin | CarSend
                                 <div class="form-group col-12">
                                     <label class="col-form-label">Description</label>
                                     <div>
-                                        <textarea class="form-control" name="description"> {{ $auto->description }} </textarea>
+                                        <textarea class="form-control"
+                                            name="description"> {{ $auto->description }} </textarea>
                                     </div>
                                 </div>
 
@@ -261,7 +270,7 @@ Dashbord Admin | CarSend
                                     <label class="col-form-label">image</label>
                                     <div>
                                         <img src="{{ asset('Cars/' . $auto->image) }}" class="img-thumbnail"
-                                        alt="{{ $auto->marque }}" width="250px">
+                                            alt="{{ $auto->marque }}" width="250px">
                                         <input type="file" accept="image/*,.jpg, .png, .jpeg" multiple name="image">
                                     </div>
                                 </div>
@@ -282,9 +291,9 @@ Dashbord Admin | CarSend
 @endsection
 
 {{-- @section('admin-extra-js')
-  <script>
+<script>
     $(document).ready(function (){
         $('input[type="file"]').imageuploadify();
     });
-  </script>
+</script>
 @endsection --}}

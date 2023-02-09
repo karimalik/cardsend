@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\Admin\AutoController;
-use App\Http\Controllers\CarController;
-use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\OAuthController;
+use App\Http\Controllers\Admin\AutoController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\FacebookAuthController;
+use App\Http\Controllers\Admin\DashboardController;
 
 
 /*
@@ -53,6 +54,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'cs-admin'], function (){
         Route::get('dashboard', 'index')->middleware('role:admin');
     });
     Route::resource('auto', AutoController::class)->middleware('role:admin');
+    Route::resource('user', UserController::class)->middleware('role:admin');
 });
 Auth::routes(['verify' => true]);
 
